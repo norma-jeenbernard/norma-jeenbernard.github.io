@@ -1,0 +1,148 @@
+html, body {
+    margin: 0;
+    /* Taille du texte */
+    font-size: 21px;
+    /* Interligne (multiple de la taille du texte) */
+    line-height: 1.2;
+    /* Coller ici les indications de fontes fournies par Google Fonts */
+    font-family: 'Roboto Mono', monospace;
+    /* Couleur de fond si vous avez supprimé le caroussel d'images */
+    background: #f5f5f5;
+}
+
+@media screen and (max-width: 767px) {
+    /* Règles spécifiques aux mobiles (ou écrans < 767 pixels de large @ 96dpi) */
+    html, body {
+        font-size: 17px;
+    }
+}
+
+html * {
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Ces styles s'appliquent à tous les éléments de la page : ici, on met tous les textes au même corps. */
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+main.slides {
+    /* Position du caroussel de fond - ne pas toucher */
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.carte_visite {
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* Marge intérieure */
+    padding: 32px;
+    /* Couleur du texte */
+    color: rgb(0, 0, 0);
+    /* Contour potentiel du texte */
+    /*
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    */
+    /* Ou bien ombre portée : 5 pixels de flou sur une ombre noire à 30% d'opacité*/
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+/* Styles des liens */
+a {
+    color: rgb(0, 0, 0);
+    /* Soulignement : mettre "none" pour désactiver, "underline" pour souligner */
+    text-decoration: none;
+}
+
+a img {
+    /* Largeur du picto lien */
+    width: 24px;
+    height: auto;
+    position: relative;
+    /* Décalage par rapport au haut de la ligne */
+    top: 4px;    
+}
+
+/* Gestion du lien affiché selon la largeur d'écran */
+.lien_mobile {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    .lien_desktop {
+        display: none;
+    }
+    .lien_mobile {
+        display: initial;
+    }
+}
+
+.slider img {
+    display: none;
+}
+.slider img.active {
+    display: initial;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.btn_left,
+.btn_right
+{
+    position: absolute;
+    z-index: 1;
+}
+
+.slider .indicator {
+    bottom: 1em;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 80%;
+    background:white;
+    border: 1px solid black;
+    margin: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.slider img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.btn_left,  .btn_right {
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    width: 32px;
+    height: 32px;
+    display: block;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+}
+.btn_left img, .btn_right img {
+    width: 32px;
+    height: 32px;
+    display: block!important;
+}
+
+.btn_left {
+    left: 32px;
+    text-align: left;
+}
+.btn_right {
+    right: 32px;
+    text-align: right;
+}
